@@ -1,0 +1,17 @@
+:root {
+    --primary-color: #FA7070;
+    --background: #1E2240;
+    --nav-background: #141933;
+    --shadow: #494C6A;
+    --white-text: #D9E0F7;
+    --title-color: #CFD3F1;
+}
+
+body {
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+    min-height: 100vh;
+}
