@@ -17,6 +17,47 @@
 </head>
 
 <body>
+    <div class="settingsDiv">
+        <div class="settingsDiv__container">
+            <div class="settings__div--1">
+                <h2 class="settings__title">Settings</h2>
+                <button type="button" class="settings__icon"><ion-icon name="close-outline"></ion-icon></button>
+            </div>
+            <p class="settings__text--1">TIME (MINUTES)</p>
+            <div class="settings__div--2">
+                <label class="settings__inputGroup" for="pomodoroSetTime">
+                    pomodoro
+                    <input type="number" name="pomodoroSetTime" id="pomodoroSetTime">
+                </label>
+                <label class="settings__inputGroup" for="shortbreakSetTime">
+                    short break
+                    <input type="number" name="shortbreakSetTime" id="shortbreakSetTime">
+                </label>
+                <label class="settings__inputGroup" for="longBreakSetTime">
+                    long break
+                    <input type="number" name="longBreakSetTime" id="longBreakSetTime">
+                </label>
+            </div>
+            <div class="settings__line"></div>
+            <div class="settings__div--2">
+                <p class="settings__text--2">FONT</p>
+                <div class="settings__div--3">
+                    <button class="settingsSetFont active" type="button">Aa</button>
+                    <button class="settingsSetFont" type="button">Aa</button>
+                    <button class="settingsSetFont" type="button">Aa</button>
+                </div>
+            </div>
+            <div class="settings__line"></div>
+            <div class="settings__div--2">
+                <p class="settings__text--2">COLOR</p>
+                <div class="settings__div--3">
+                    <button class="settingsSetColor active" style="background: #FD6E72;" type="button"></button>
+                    <button class="settingsSetColor" style="background: #6FF3F8;" type="button"></button>
+                    <button class="settingsSetColor" style="background: #D981F9;" type="button"></button>
+                </div>
+            </div>
+        </div>
+    </div>
     <header class="header">
         <h1 class="header__title">Pomodoro</h1>
         <div class="header__div">
