@@ -5,6 +5,14 @@ const timeButton = document.getElementById("timeButton")
 const pomodoroBtn = document.getElementById("pomodoroBtn")
 const shortBreakBtn = document.getElementById("shortBreakBtn")
 const longBreakBtn = document.getElementById("longBreakBtn")
+const settingsSetColors = document.querySelectorAll(".settingsSetColor")
+const settingsSetFonts = document.querySelectorAll(".settingsSetFont")
+const settingsWindow = document.getElementById("settingsWindow")
+const saveButton = document.getElementById("saveButton")
+let pomodoroSetTime = document.getElementById("pomodoroSetTime")
+let shortbreakSetTime = document.getElementById("shortbreakSetTime")
+let longBreakSetTime = document.getElementById("longBreakSetTime")
+const body = document.querySelector("body")
 let mainElipse = document.querySelector(".main__elipse")
 let pomodoroTime = 20.00
 let shortBreak = 5.00
@@ -12,6 +20,41 @@ let longBreak = 15.00
 let rotateAnimation = 0
 let timeUsed = pomodoroTime
 let interval
+const colors = ["#FA7070", "#6FF3F8", "#D981F9"]
+const fonts = [`'Poppins', sans-serif`, `'PT Serif', serif`, `'Roboto Slab', serif`]
+
+document.getElementById("settingsButton").onclick = () => {
+    pomodoroSetTime.value = pomodoroTime
+    shortbreakSetTime.value = shortBreak
+    longBreakSetTime.value = longBreak
+    settingsWindow.classList.add("active")
+}
+
+document.getElementById("closeSettings").onclick = () => {
+    settingsWindow.classList.remove("active")
+}
+
+settingsSetFonts.forEach((element, index) => {
+    element.onclick = () => {
+        settingsSetFonts.forEach(btn => {
+            btn.classList.remove("active")
+        })
+        element.classList.add("active")
+        body.style = `--main-font: ${fonts[index]};`
+    }
+});
+
+settingsSetColors.forEach((element, index) => {
+    element.onclick = () => {
+        settingsSetColors.forEach(btn => {
+            btn.classList.remove("active")
+            btn.innerHTML = ``
+        })
+        element.classList.add("active")
+        element.innerHTML = `<ion-icon name="checkmark-outline"></ion-icon>`
+        body.style = `--primary-color: ${colors[index]};`
+    }
+});
 
 headerButtons.forEach(element => {
     element.onclick = () => {
@@ -79,7 +122,7 @@ timeButton.onclick = () => {
                     timeText.textContent = `${timeUsed.toFixed(2).replace('.', ':')}`
                 }
                 rotateAnimation += 360
-                mainElipse.style.rotate = `${rotateAnimation}deg`
+                mainElipse.style.transform = `rotate(${rotateAnimation}deg)`
             } else {
                 clearInterval(interval)
                 timeButton.classList.remove("active")
@@ -90,4 +133,17 @@ timeButton.onclick = () => {
             }
         }, 1000)
     }
+}
+
+saveButton.onclick = () => {
+    pomodoroTime = Number(pomodoroSetTime.value)
+    shortBreak = Number(shortbreakSetTime.value)
+    longBreak = Number(longBreakSetTime.value)
+    timeUsed = pomodoroTime
+    timeText.textContent = `${timeUsed.toFixed(2).replace('.', ':')}`
+    settingsWindow.classList.remove("active")
+    timeText.style.transform = "scale(1.1)"
+    setTimeout(() => {
+        timeText.style.transform = "scale(1)"
+    }, 100);
 }

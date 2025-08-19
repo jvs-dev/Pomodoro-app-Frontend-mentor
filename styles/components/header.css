@@ -10,7 +10,7 @@
 .header__title {
     font-size: 28px;
     color: var(--title-color);
-    font-family: "Roboto", sans-serif;
+    font-family: var(--main-font);
     text-transform: lowercase;
     letter-spacing: 13px;
 }
@@ -36,6 +36,7 @@
 }
 
 .header__button {
+    font-family: var(--main-font);
     display: flex;
     font-size: 16px;
     font-weight: 600;

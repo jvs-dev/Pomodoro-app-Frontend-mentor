@@ -12,16 +12,17 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet">
 </head>
 
 <body>
-    <div class="settingsDiv">
+    <div class="settingsDiv" id="settingsWindow">
         <div class="settingsDiv__container">
             <div class="settings__div--1">
                 <h2 class="settings__title">Settings</h2>
-                <button type="button" class="settings__icon"><ion-icon name="close-outline"></ion-icon></button>
+                <button type="button" class="settings__icon" id="closeSettings"><ion-icon
+                        name="close-outline"></ion-icon></button>
             </div>
             <p class="settings__text--1">TIME (MINUTES)</p>
             <div class="settings__div--2">
@@ -42,22 +43,27 @@
             <div class="settings__div--2">
                 <p class="settings__text--2">FONT</p>
                 <div class="settings__div--3">
-                    <button class="settingsSetFont active" type="button">Aa</button>
-                    <button class="settingsSetFont" type="button">Aa</button>
-                    <button class="settingsSetFont" type="button">Aa</button>
+                    <button class="settingsSetFont active" style="font-family: 'Poppins', sans-serif;"
+                        type="button">Aa</button>
+                    <button class="settingsSetFont" style="font-family: 'PT Serif', serif;"
+                        type="button">Aa</button>
+                    <button class="settingsSetFont" style="font-family: 'Roboto Slab', serif;" type="button">Aa</button>
                 </div>
             </div>
             <div class="settings__line"></div>
             <div class="settings__div--2">
                 <p class="settings__text--2">COLOR</p>
                 <div class="settings__div--3">
-                    <button class="settingsSetColor active" style="background: #FD6E72;" type="button"></button>
+                    <button class="settingsSetColor active" style="background: #FD6E72;" type="button"><ion-icon
+                            name="checkmark-outline"></ion-icon></button>
                     <button class="settingsSetColor" style="background: #6FF3F8;" type="button"></button>
                     <button class="settingsSetColor" style="background: #D981F9;" type="button"></button>
                 </div>
             </div>
+            <button class="settings__saveButton" type="button" id="saveButton">Apply</button>
         </div>
     </div>
+
     <header class="header">
         <h1 class="header__title">Pomodoro</h1>
         <div class="header__div">
@@ -70,14 +76,15 @@
     <main id="main">
         <div class="main__div--1">
             <div class="main__div--2">
-                <img class="main__elipse" src="assets/image/elipse.svg">
+                <div class="main__elipse"></div>
                 <div class="main__div--3">
                     <h3 class="main__clockTime" id="timeText">17:59</h3>
                     <button class="main__clockButton" id="timeButton">PLAY</button>
                 </div>
             </div>
         </div>
-        <button class="main__settings" type="button"><ion-icon name="settings-sharp"></ion-icon></button>
+        <button class="main__settings" type="button" id="settingsButton"><ion-icon
+                name="settings-sharp"></ion-icon></button>
     </main>
 
 
