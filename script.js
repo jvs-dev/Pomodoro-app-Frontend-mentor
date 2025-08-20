@@ -51,7 +51,7 @@ settingsSetFonts.forEach((element, index) => {
             btn.classList.remove("active")
         })
         element.classList.add("active")
-        body.style = `--main-font: ${fonts[index]};`
+        document.documentElement.style.setProperty('--main-font', `${fonts[index]}`);
     }
 });
 
@@ -63,7 +63,7 @@ settingsSetColors.forEach((element, index) => {
         })
         element.classList.add("active")
         element.innerHTML = `<ion-icon name="checkmark-outline"></ion-icon>`
-        body.style = `--primary-color: ${colors[index]};`
+        document.documentElement.style.setProperty('--primary-color', `${colors[index]}`);
     }
 });
 
