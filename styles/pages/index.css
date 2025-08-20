@@ -320,4 +320,18 @@
         height: calc(100% - 14px);
         width: calc(100% - 14px);
     }
+    .settingsDiv__container {
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+        overflow: auto;
+        max-height: none;
+    }
+    .settings__div--2 {
+        flex-direction: column;
+    }
+    .settings__saveButton {
+        position: unset;
+        margin: 30px 0px 0px 0px;
+    }
 }
