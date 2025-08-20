@@ -19,6 +19,7 @@ let shortBreak = 5.00
 let longBreak = 15.00
 let rotateAnimation = 0
 let timeUsed = pomodoroTime
+let lastTime = pomodoroTime
 let interval
 const colors = ["#FA7070", "#6FF3F8", "#D981F9"]
 const fonts = [`'Poppins', sans-serif`, `'PT Serif', serif`, `'Roboto Slab', serif`]
@@ -84,6 +85,7 @@ headerButtons.forEach(element => {
 
 shortBreakBtn.addEventListener("click", () => {
     timeUsed = shortBreak
+    lastTime = shortBreak
     timeText.textContent = `${timeUsed.toFixed(2).replace('.', ':')}`
     timeText.style.transform = "scale(1.1)"
     setTimeout(() => {
@@ -93,6 +95,7 @@ shortBreakBtn.addEventListener("click", () => {
 
 longBreakBtn.addEventListener("click", () => {
     timeUsed = longBreak
+    lastTime = longBreak
     timeText.textContent = `${timeUsed.toFixed(2).replace('.', ':')}`
     timeText.style.transform = "scale(1.1)"
     setTimeout(() => {
@@ -102,6 +105,7 @@ longBreakBtn.addEventListener("click", () => {
 
 pomodoroBtn.addEventListener("click", () => {
     timeUsed = pomodoroTime
+    lastTime = pomodoroTime
     timeText.textContent = `${timeUsed.toFixed(2).replace('.', ':')}`
     timeText.style.transform = "scale(1.1)"
     setTimeout(() => {
@@ -138,7 +142,7 @@ timeButton.onclick = () => {
                 timeButton.classList.remove("active")
                 timeButton.textContent = "PLAY"
                 alert("Time's up!")
-                timeUsed = 20.00
+                timeUsed = lastTime
                 timeText.textContent = `${timeUsed.toFixed(2).replace('.', ':')}`
             }
         }, 1000)
