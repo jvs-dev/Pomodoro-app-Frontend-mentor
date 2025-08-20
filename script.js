@@ -23,6 +23,16 @@ let interval
 const colors = ["#FA7070", "#6FF3F8", "#D981F9"]
 const fonts = [`'Poppins', sans-serif`, `'PT Serif', serif`, `'Roboto Slab', serif`]
 
+window.addEventListener("load", () => {
+    activeBackground.style.left = pomodoroBtn.offsetLeft + "px"
+    activeBackground.style.width = pomodoroBtn.offsetWidth + "px"
+})
+
+window.addEventListener("resize", () => {
+    activeBackground.style.left = pomodoroBtn.offsetLeft + "px"
+    activeBackground.style.width = pomodoroBtn.offsetWidth + "px"
+})
+
 document.getElementById("settingsButton").onclick = () => {
     pomodoroSetTime.value = pomodoroTime
     shortbreakSetTime.value = shortBreak

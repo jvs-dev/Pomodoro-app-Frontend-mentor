@@ -48,11 +48,27 @@
     border: 0px;
     outline-width: 0px;
     background: transparent;
-    color: var(--white-text);
+    color: #646883;
     z-index: 2;
     transition: 0.3s ease;
 }
 
 .header__button.active {
     color: var(--nav-background);
+}
+
+@media (max-width: 782px) {
+    .header__title {
+        font-size: 24px;
+        letter-spacing: 4px;
+    }
+
+    .header__div {
+        align-items: center;
+        gap: 0.4em;
+    }
+    .header__button {
+        padding: 14px 10px;
+        font-size: 14px
+    }
 }
